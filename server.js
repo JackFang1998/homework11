@@ -39,8 +39,16 @@ app.get("/", function(req, res) {
       return res.status(500).end(); //
     }
     res.render("index", { burgers: data });
-  }); //
+  });
 });
+// connection.query("SELECT * FROM atedburger;", function(err, data) {
+//   if (err) {
+//     //
+//     return res.status(500).end(); //
+//   }
+//   res.render("index", { atedburger: data });
+// });
+
 app.get("/:id", function(req, res) {
   connection.query(
     "SELECT * FROM burgers where id = ?",

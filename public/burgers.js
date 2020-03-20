@@ -1,7 +1,6 @@
 $(function() {
   $(".delburger").on("click", function(event) {
     var id = $(this).data("id");
-
     // Send the DELETE request.
     $.ajax("/api/burgers/" + id, {
       type: "DELETE"
@@ -15,17 +14,15 @@ $(function() {
   $(".create-burger").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-
-    var newQuote = {
-      burger_name: $("#burgers")
+    var newBurger = {
+      burger_name: $("#burger_name")
         .val()
         .trim()
     };
-
     // Send the POST request.
     $.ajax("/api/burgers", {
       type: "POST",
-      data: newQuote
+      data: newBurger
     }).then(function() {
       console.log("created new burgers");
       // Reload the page to get the updated list
@@ -38,7 +35,7 @@ $(function() {
     event.preventDefault();
 
     var updatedBurger = {
-      burger_name: $("#burger")
+      burger_name: $("#renewburger")
         .val()
         .trim()
     };
