@@ -1,0 +1,32 @@
+<h1>Task Saver</h1>
+
+<h3>Hey. I want a Burger!!!! sir!!!</h3>
+
+<form action="/" method="POST">
+
+    {{!-- <img src="./images/burger.jpg"> --}}
+    {{!-- 
+    <body style="background-color:orange">
+
+        <textarea type="text" name="task"></textarea>
+        <button type="submit">Submit</button> --}}
+</form>
+<ul>
+    {{#each burgers}}
+    <li>
+        <p>List{{this.id}}, Burger's name: {{this.burger_name}}</p>
+        <button data-id="{{this.id}}" class="delburger">devour it</button>
+        <a href="/{{this.id}}">Update this quote</a>
+    </li>
+    {{/each}}
+</ul>
+<h2>Add a Burger</h2>
+
+<form class="create-burger">
+
+    <div class="form-burger">
+        <label for="burger_name">Burger's name:</label>
+        <input type="text" id="burger_name" name="burger_name">
+    </div>
+    <button type="submit">Add Quote</button>
+</form>
